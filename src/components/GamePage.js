@@ -49,26 +49,45 @@ class GamePage extends React.Component {
     window.location.reload(false)
   }
 
+  return = () => {
+    this.props.history.push('/')
+  }
+
   render() {
     if (!this.state.amendedOption) return null 
     return (
       <>
-        <h5>Quote: </h5>
-        <h4>' {this.state.quotes} '</h4>
-        <h6>Options:  </h6>
-        <div >
-          {this.state.amendedOption.map(name => {
-            return <button key={name} onClick={this.winning} value={name}>{name}</button>
-          })}
-          <button onClick={this.winning} value="win">{this.state.character}</button>
+        <div className="section columns">
+          <div className="container column">
+            <div className="media">
+              <div className="media-content">
+                <div className="content">
+                  <div>
+                    <strong>Guess the quote</strong> <small>@theusoffice</small> <small>1m</small>
+                    <p>{this.state.quotes}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="buttons are-small column">{this.state.amendedOption.map(name => {
+                return <button key={name} onClick={this.winning} value={name} className="button is-info is-rounded">{name}</button>
+              })}
+              <button onClick={this.winning} value="win" className="button is-info is-rounded">{this.state.character}</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <p>{this.state.result}</p>
-        <img src={this.state.winImage}></img>
-        <img src={this.state.looseImage}></img>
-        <button onClick={this.tryAgain}>Next one pls</button>
       </>
     )
   }
 }
 
 export default GamePage
+
+
+//   <p>{this.state.result}</p> 
+//   <img src={this.state.winImage}></img>
+//   <img src={this.state.looseImage}></img>
+//   <button onClick={this.tryAgain}>Next one pls</button>
+//   <button onClick={this.return}>back to main page</button>

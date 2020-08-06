@@ -1,1 +1,28 @@
 @import '~bulma/bulma.sass';
+
+.container-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Special Elite', cursive;
+}
+
+h1, h2, ul {
+  text-align: center;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.home-text {
+  margin-bottom: 50px;
+}
+  
+.dwight-image {
+  height: 40vh;
+  width: 25vw;
+}
