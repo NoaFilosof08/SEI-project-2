@@ -6,7 +6,9 @@ class GamePage extends React.Component {
     quotes: '',
     character: '',
     options: [],
-    amendedOption: null 
+    amendedOption: null,
+    winImage: '',
+    looseImage: ''
   }
 
   async componentDidMount() {
@@ -32,24 +34,38 @@ class GamePage extends React.Component {
         currentChoices.push(random.firstname)
       }
     }  
-    console.log(currentChoices)
     this.setState({ amendedOption: [...currentChoices] })
+  }
+
+  winning = (event) => {
+    if (event.target.value === 'win') {
+      return this.setState({ winImage: 'https://media.giphy.com/media/mp1JYId8n0t3y/giphy.gif' })
+    } else {
+      return this.setState({ looseImage: 'https://media.giphy.com/media/1T96TRBBGYThC/giphy.gif' })
+    }
+  }
+
+  tryAgain = () => {
+    window.location.reload(false)
   }
 
   render() {
     if (!this.state.amendedOption) return null 
-    console.log(this.state.amendedOption)
     return (
       <>
         <h5>Quote: </h5>
         <h4>' {this.state.quotes} '</h4>
         <h6>Options:  </h6>
-        <div>
+        <div >
           {this.state.amendedOption.map(name => {
-            return <button key={name} value={name}>{name}</button>
+            return <button key={name} onClick={this.winning} value={name}>{name}</button>
           })}
-          <button>{this.state.character}</button>
+          <button onClick={this.winning} value="win">{this.state.character}</button>
         </div>
+        <p>{this.state.result}</p>
+        <img src={this.state.winImage}></img>
+        <img src={this.state.looseImage}></img>
+        <button onClick={this.tryAgain}>Next one pls</button>
       </>
     )
   }
