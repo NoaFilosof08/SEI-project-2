@@ -1,5 +1,8 @@
 @import '~bulma/bulma.sass';
+@import './gamepage.scss';
+@import './gameover.scss';
 
+// home page
 .container-div {
   display: flex;
   flex-direction: column;
@@ -37,3 +40,4 @@ h1 {
 .dwight-button {
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
 }
+

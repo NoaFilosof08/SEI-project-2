@@ -17,11 +17,11 @@ const Home = () => {
           </ul>
         </div>
         
-        <button className="dwight-button">
+        <div className="dwight-button">
           <Link to="/game">
             <img className="dwight-image"src="https://i.redd.it/wd3eu7mlv9i01.jpg" alt="dwight"></img>
           </Link>
-        </button>
+        </div>
       </div>
       
     </>

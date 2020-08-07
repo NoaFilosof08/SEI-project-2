@@ -1,0 +1,40 @@
+// game page 
+.background, .container-div {
+  background-color: #EFDECD;
+  height: 100vh;
+}
+
+.thebox {
+  margin: 150px;
+  margin-bottom: 40px;
+  margin-top: 60px;
+  border: rgb(194, 194, 194) solid 0.5px;
+  border-radius: 4px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 2px 8px 8px 0 rgba(0, 0, 0, 0.2), 2px 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttons-margin {
+  margin-top: 5px;
+}
+
+.kevindiv {
+  display: flex;
+  justify-content: center;
+}
+
+.kevingif {
+  height: 250px;
+  width: 350px;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logoimg {
+  height: 100px;
+  width: 170px;
+}

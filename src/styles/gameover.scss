@@ -1,0 +1,22 @@
+.winbox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #EFDECD;
+  height: 100vh;
+  font-family: 'Special Elite', cursive;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+.btn-margin {
+  margin: 5px;
+  margin-top: 10px;
+}
+
+.img-shadow {
+  box-shadow: 2px 8px 8px 0 rgba(0, 0, 0, 0.2), 2px 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
