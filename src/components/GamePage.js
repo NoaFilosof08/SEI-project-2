@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import { Link } from 'react-router-dom'
+import Loader from './Loader'
 
 class GamePage extends React.Component {
   state = {
@@ -9,11 +10,10 @@ class GamePage extends React.Component {
     character: '',
     options: [],
     amendedOption: null,
-    loading: ''
+    loading: false
   }
 
   async componentDidMount() {
-    // this.setState({ loading: 'loading' })
     try {
       const resQuote = await axios.get('https://cors-anywhere.herokuapp.com/https://officeapi.dev/api/quotes/random')
       const resChar = await axios.get('https://cors-anywhere.herokuapp.com/https://officeapi.dev/api/characters/')
@@ -21,6 +21,7 @@ class GamePage extends React.Component {
       console.log(resChar.data.data)
       this.setState({ quotes: resQuote.data.data.content, character: resQuote.data.data.character.firstname })
       this.getRandom()
+      this.setState({ loading: true })
     } catch (err) {
       console.log(err)
     }
@@ -48,7 +49,7 @@ class GamePage extends React.Component {
   }
 
   render() {
-    if (!this.state.amendedOption) return null 
+    if (!this.state.amendedOption) return <Loader />
     return (
       <>
         <div className="section columns is-vcentered background">
