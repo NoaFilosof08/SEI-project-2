@@ -55,7 +55,7 @@ class GamePage extends React.Component {
         <div className="section columns is-vcentered background">
           <div className="container column">
             <div className="logo">
-              <img src="https://i.pinimg.com/originals/53/90/7f/53907f287c469f9db37731697f21712c.png" className="logoimg"></img>
+              <img src="https://i.pinimg.com/originals/53/90/7f/53907f287c469f9db37731697f21712c.png" className="logoimg" alt="logoimg"></img>
             </div>    
             <div className="thebox">
               <div className="media">
