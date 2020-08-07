@@ -6,6 +6,7 @@ const Home = () => {
   return (
     <>
       <div className="container-div"> 
+        <img src="https://media.giphy.com/media/da75JuW2HHuBNqOHHE/giphy.gif" alt="michael" className="michael-gif"></img>
         <div className="home-text">
           <h1>Dwitanic</h1>
           <h2>Come 2 play: instructions</h2>
@@ -16,9 +17,9 @@ const Home = () => {
           </ul>
         </div>
         
-        <button>
+        <button className="dwight-button">
           <Link to="/game">
-            <img className="dwight-image"src="https://i.redd.it/wd3eu7mlv9i01.jpg"></img>
+            <img className="dwight-image"src="https://i.redd.it/wd3eu7mlv9i01.jpg" alt="dwight"></img>
           </Link>
         </button>
       </div>

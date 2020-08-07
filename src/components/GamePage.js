@@ -1,14 +1,14 @@
 import React from 'react' 
 import axios from 'axios'
 
+import { Link } from 'react-router-dom'
+
 class GamePage extends React.Component {
   state = {
     quotes: '',
     character: '',
     options: [],
     amendedOption: null,
-    winImage: '',
-    looseImage: ''
   }
 
   async componentDidMount() {
@@ -37,14 +37,6 @@ class GamePage extends React.Component {
     this.setState({ amendedOption: [...currentChoices] })
   }
 
-  winning = (event) => {
-    if (event.target.value === 'win') {
-      return this.setState({ winImage: 'https://media.giphy.com/media/mp1JYId8n0t3y/giphy.gif' })
-    } else {
-      return this.setState({ looseImage: 'https://media.giphy.com/media/1T96TRBBGYThC/giphy.gif' })
-    }
-  }
-
   tryAgain = () => {
     window.location.reload(false)
   }
@@ -71,9 +63,9 @@ class GamePage extends React.Component {
             </div>
             <div className="columns">
               <div className="buttons are-small column">{this.state.amendedOption.map(name => {
-                return <button key={name} onClick={this.winning} value={name} className="button is-info is-rounded">{name}</button>
+                return <Link key={name} to="/game/loose" value={name} className="button is-info is-rounded">{name}</Link>
               })}
-              <button onClick={this.winning} value="win" className="button is-info is-rounded">{this.state.character}</button>
+              <Link to="/game/win" value="win" className="button is-info is-rounded">{this.state.character}</Link>
               </div>
             </div>
           </div>
@@ -86,8 +78,4 @@ class GamePage extends React.Component {
 export default GamePage
 
 
-//   <p>{this.state.result}</p> 
-//   <img src={this.state.winImage}></img>
-//   <img src={this.state.looseImage}></img>
-//   <button onClick={this.tryAgain}>Next one pls</button>
-//   <button onClick={this.return}>back to main page</button>
+  
