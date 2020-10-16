@@ -1,7 +1,7 @@
 # Project 2: Reactathon - Dwitanic
 
 ### Overview
-Dwightanic is a 'game' which generates a random quote from a US Office character, and you have to guess who said it out of 4 options. The brief was to use a third party API of our choice, mount the data onto a react app and somehow have the user interact with it.
+Dwitanic is a 'game' which generates a random quote from a US Office character, and you have to guess who said it out of 4 options. The brief was to use a third party API of our choice, mount the data onto a react app and somehow have the user interact with it.
 This was my second project in General Assembly's Software Engineering Immersive Course. It was a pair project assigned after 1 and a half weeks of learning ReactJS and 5 and a half weeks of learning in general.
 
 ## The Game
