@@ -41,6 +41,21 @@ The first step was making sure the API we chose was interactive and simple to us
 
 We decided to build 2 simple React components; one App.JS and another component where we would do our first data request. Once we saw the data working and mounted, being the quotes, we then went about mounting the person who said it onto the page. Next up came generating 3 other random characters from the API to produce what looked like 4 options.
 
+``` javascript
+getRandom = () => {
+  let currentChoices = []
+    for (let i = 0; i < 3; i++) { // this will loop 3 times as we wanted 3 random choices
+      const random = this.state.options[Math.floor(Math.random() * this.state.options.length)] // this will generate our random choice
+      if (random.firstname === this.state.character) { // this will check whether the first name of the random choice generated is the same as the correct choice
+        return this.getRandom() // if it is, the run the loop again
+      } else {
+        currentChoices.push(random.firstname)m // if it isn't, then push this random name into the current choices array
+      }
+    }
+    this.setState({ amendedOption: [...currentChoices] }) // set the current choices array into state
+  }
+```
+
 Once this was complete we styled the page and added some feautres to enhance the UX. This included an outcome page; which would change depending on whether you won or not, a loading spinner (with a really fun gif), and general tidy up.
 
 ## Challenges
